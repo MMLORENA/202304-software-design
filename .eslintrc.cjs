@@ -5,6 +5,22 @@ module.exports = {
     jest: true,
   },
   extends: ['xo'],
+  overrides: [
+    {
+      extends: ['xo-typescript'],
+      files: ['*.ts'],
+      rules: {
+        'no-unused-vars': ['error'],
+        '@typescript-eslint/consistent-type-definitions': [
+          'error',
+          'interface',
+        ],
+        '@typescript-eslint/indent': 'off',
+        '@typescript-eslint/no-empty-function': 'off',
+        'no-implicit-coercion': 'off',
+      },
+    },
+  ],
   parser: '@typescript-eslint/parser',
   ignorePatterns: ['**/dist/**/*.js'],
   parserOptions: {
